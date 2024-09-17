@@ -90,6 +90,7 @@ const handleShowDetails = async(id) =>{
 
 const showPhoneDetails = (phone)=>{
 
+    console.log(phone);
     const phoneName = document.getElementById('deatil-phone-name');
     phoneName.innerText = phone.name;
 
@@ -97,8 +98,14 @@ const showPhoneDetails = (phone)=>{
     showDetailsContainer.innerHTML=
     `
     <img src="${phone.image}"alt=""/>
-    <p><span>Storage:</span>${phone.mainFeatures.storage}</p>
+    <p><span>Storage:</span>${phone?.mainFeatures?.storage}</p>
+    <p><span>Chipset:</span>${phone?.mainFeatures?.chipSet}</p>
+       <p><span>Release Date:</span>${phone?.releaseDate
+       }</p>
+       <p><span>Slug:</span>${phone?.slug
+       }</p>
 
+    <p><span>GPS:</span>${phone?.others?.GPS}</p> 
     `
 
 
